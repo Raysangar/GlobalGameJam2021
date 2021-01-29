@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
         animator.SetInteger(VerticalAnimHash, 0);
     }
 
+    public void GetUngry()
+    {
+        animator.SetBool(HappyAnimHash, true);
+    }
+
     public void OnPlayerMove(InputAction.CallbackContext context)
     {
         var newDirection = context.ReadValue<Vector2>();
