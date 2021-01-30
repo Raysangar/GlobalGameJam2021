@@ -8,6 +8,8 @@ public class Scene : MonoBehaviour
     public System.Action<ID> OnPlayerGoesToScene;
     public InteractableObject[] InteractableObjects { get; private set; }
     public ID Id => id;
+    public float LeftBound => maxLeftPosition;
+    public float RightBound => maxRightPosition;
 
     public void Initialize(System.Action<ID> playerGoesToNewSceneCallback)
     {
@@ -41,6 +43,8 @@ public class Scene : MonoBehaviour
     }
 
     [SerializeField] ID id;
-
+    [SerializeField] float maxLeftPosition;
+    [SerializeField] float maxRightPosition;
+ 
     private Dictionary<ID, SceneTransitioner> sceneTransitioners;
 }

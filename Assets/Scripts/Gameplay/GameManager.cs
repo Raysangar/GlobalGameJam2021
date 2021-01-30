@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public System.Action<System.Action> OnGameAboutToStart;
     public System.Action OnGameOver;
     public float SecondsLeft { get; private set; }
-    public int CurrentLevel;
+    public int CurrentLevel { get; private set; }
 
     public void Initialize(PlayerController player, ScenesManager scenesManager, PlayerInput input, IntroController introController)
     {

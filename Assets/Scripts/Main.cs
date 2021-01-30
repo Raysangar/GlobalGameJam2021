@@ -13,13 +13,15 @@ public class Main : MonoBehaviour
         scenesManager = GetComponent<ScenesManager>();
         introController = GetComponent<IntroController>();
 
+        cameraController.Initialize(player);
         introController.Initialize(player, input);
         gameManager.Initialize(player, scenesManager, input, introController);
-        scenesManager.Initialize(player);
+        scenesManager.Initialize(player, cameraController);
         uiManager.Initialize(gameManager, scenesManager);
     }
 
     [SerializeField] PlayerController player;
+    [SerializeField] CameraController cameraController;
 
     private GameManager gameManager;
     private ScenesManager scenesManager;

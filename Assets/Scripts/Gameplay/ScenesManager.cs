@@ -6,9 +6,10 @@ public class ScenesManager : MonoBehaviour
     public System.Action<System.Action> OnPlayerGoesToNewScene;
     public Dictionary<Scene.ID, Scene> Map { get; private set; }
 
-    public void Initialize(PlayerController player)
+    public void Initialize(PlayerController player, CameraController cameraController)
     {
         this.player = player;
+        this.cameraController = cameraController;
         Map = new Dictionary<Scene.ID, Scene>();
         foreach (var scene in scenes)
         {
@@ -25,7 +26,13 @@ public class ScenesManager : MonoBehaviour
             int numberOfFacemask;
             facemasksInMap.TryGetValue(scene.Id, out numberOfFacemask);
             scene.ResetScene(numberOfFacemask);
-            scene.gameObject.SetActive(scene.Id == initialScene);
+            if (scene.Id == initialScene)
+            {
+                scene.gameObject.SetActive(true);
+                cameraController.SetBounds(scene.LeftBound, scene.RightBound);
+            }
+            else
+                scene.gameObject.SetActive(false);
         }
     }
 
@@ -38,7 +45,9 @@ public class ScenesManager : MonoBehaviour
     private void MakeSceneTransition()
     {
         Map[currentSceneId].gameObject.SetActive(false);
-        Map[nextSceneId].gameObject.SetActive(true);
+        var scene = Map[nextSceneId];
+        scene.gameObject.SetActive(true);
+        cameraController.SetBounds(scene.LeftBound, scene.RightBound);
         player.transform.position = Map[nextSceneId].GetPlayerInitialPositionComingFrom(currentSceneId);
         currentSceneId = nextSceneId;
     }
@@ -49,4 +58,5 @@ public class ScenesManager : MonoBehaviour
     private Scene.ID currentSceneId;
     private Scene.ID nextSceneId;
     private PlayerController player;
+    private CameraController cameraController;
 }
