@@ -10,6 +10,7 @@ public class SceneTransitioner : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         OnPlayerGoesToNewScene(targetScene);
+        SoundManager.Instance.PlayTransitionSound();
     }
 
     [SerializeField] Scene.ID targetScene;

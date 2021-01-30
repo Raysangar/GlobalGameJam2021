@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1780515003141256664}
   closedSprite: {fileID: 21300000, guid: 3134891679e6b05429bf6cca35a5dcaa, type: 3}
-  openedSprite: {fileID: 21300000, guid: 3134891679e6b05429bf6cca35a5dcaa, type: 3}
+  openedSprite: {fileID: 0}
   keyboardInteraction: {fileID: 6061173225548123269}
   playstationGamepadInteraction: {fileID: 2704037905048062707}
   genericGamepadInteraction: {fileID: 5415408956600135065}

@@ -1889,6 +1889,7 @@ GameObject:
   - component: {fileID: 1078723699}
   - component: {fileID: 1078723698}
   - component: {fileID: 1078723700}
+  - component: {fileID: 1078723701}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2068,6 +2069,30 @@ MonoBehaviour:
   playerInitialPosition: {fileID: 3658281315946088477}
   playerFinalPosition: {fileID: 3658281315946088476}
   introAnimator: {fileID: 1354009810}
+  backgroundSounds: {fileID: 8300000, guid: d7ddcb952b6feff44bb7776b8de9e324, type: 3}
+--- !u!114 &1078723701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078723693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af260514029726f40ac1676695b2ea2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepsSounds:
+  - {fileID: 8300000, guid: 019756582441bb34088a8bf4587bbf85, type: 3}
+  - {fileID: 8300000, guid: 743c1289f8b7fd5429b15e6ea3ad0ff9, type: 3}
+  - {fileID: 8300000, guid: a0a9f3d022ba6cc4f8d49e42860be04d, type: 3}
+  stepSoundPeriod: 0.4
+  grabObjectSound: {fileID: 8300000, guid: ce928e458cc9c904b84682cc09b79d17, type: 3}
+  transitionSounds:
+  - {fileID: 8300000, guid: 7f2a0d1487a7ecc42bfaed5fce6720da, type: 3}
+  - {fileID: 8300000, guid: fe206a6ecdd51f74da9a78679d14879e, type: 3}
+  - {fileID: 8300000, guid: b59e9daac2d3e754da7598e7ef2f9862, type: 3}
+  - {fileID: 8300000, guid: 0d19c7a780dd1d7499ab6b0718c7c811, type: 3}
 --- !u!1 &1160831237
 GameObject:
   m_ObjectHideFlags: 0

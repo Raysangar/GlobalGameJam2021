@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
         player.Move(Vector2.zero);
         player.Reset(false);
         introController.HideIntro();
+        SoundManager.Instance.PlayTransitionSound();
     }
 
     private void OnPlayerFoundFacemask()

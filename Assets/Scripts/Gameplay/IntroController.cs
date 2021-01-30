@@ -35,6 +35,7 @@ public class IntroController : MonoBehaviour
     private IEnumerator IntroCoroutine(System.Action introFinishedCallback)
     {
         player.Move(Vector2.right);
+        SoundManager.Instance.PlaySound(backgroundSounds);
         yield return new WaitUntil(() => Vector2.Distance(player.transform.position, playerFinalPosition.position) < .01f);
         player.Move(Vector2.zero);
         player.GetUngry();
@@ -42,6 +43,7 @@ public class IntroController : MonoBehaviour
         yield return new WaitForSeconds(2);
         player.Move(Vector2.left);
         yield return new WaitUntil(() => Vector2.Distance(player.transform.position, playerInitialPosition.position) < .01f);
+        SoundManager.Instance.StopSound(backgroundSounds);
         introFinishedCallback();
     }
 
@@ -49,6 +51,7 @@ public class IntroController : MonoBehaviour
     [SerializeField] Transform playerInitialPosition;
     [SerializeField] Transform playerFinalPosition;
     [SerializeField] Animator introAnimator;
+    [SerializeField] AudioClip backgroundSounds;
 
     private PlayerController player;
     private PlayerInput input;

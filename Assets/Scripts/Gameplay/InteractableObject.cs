@@ -15,6 +15,7 @@ public class InteractableObject : MonoBehaviour
     {
         nearCollider.enabled = false;
         spriteRenderer.sprite = openedSprite;
+        SoundManager.Instance.PlayGrabObjectSound(openSound);
         return hasFacemask;
     }
 
@@ -36,6 +37,7 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite closedSprite;
     [SerializeField] Sprite openedSprite;
+    [SerializeField] AudioClip openSound;
 
     [Header("Interaction Feedback")]
     [SerializeField] GameObject keyboardInteraction;

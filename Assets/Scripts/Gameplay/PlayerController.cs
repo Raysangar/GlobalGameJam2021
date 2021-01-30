@@ -30,8 +30,14 @@ public class PlayerController : MonoBehaviour
         if (movement.x != 0 && movement.x != direction.x)
             spriteRenderer.flipX = movement.x < 0;
         direction = movement;
+        
         animator.SetInteger(HorizontalAnimHash, Mathf.RoundToInt(direction.x));
         animator.SetInteger(VerticalAnimHash, Mathf.RoundToInt(direction.y));
+
+        if (movement == Vector2.zero)
+            SoundManager.Instance.StopPlayerSteps();
+        else
+            SoundManager.Instance.PlayPlayerSteps();
     }
 
     public void OnPlayerTriedInteracting(InputAction.CallbackContext context)
@@ -50,6 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        nearInteractableObjects = new List<InteractableObject>();
     }
 
     private void Update()
