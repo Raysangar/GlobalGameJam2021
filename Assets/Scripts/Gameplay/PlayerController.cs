@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,9 +36,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnPlayerTriedInteracting(InputAction.CallbackContext context)
     {
-        if (nearInteractableObject != null)
+        if (nearInteractableObjects.Count > 0)
         {
-            if (nearInteractableObject.Open())
+            if (nearInteractableObjects[0].Open())
             {
                 OnPlayerFoundFacemask();
                 animator.SetBool(FacemaskAnimHash, true);
@@ -58,12 +59,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        nearInteractableObject = collision.GetComponent<InteractableObject>();
+        nearInteractableObjects.Add(collision.GetComponent<InteractableObject>());
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        nearInteractableObject = null;
+        nearInteractableObjects.Remove(collision.GetComponent<InteractableObject>());
     }
 
     [SerializeField] float speed;
@@ -71,7 +72,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 direction;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    private InteractableObject nearInteractableObject;
+    private List<InteractableObject> nearInteractableObjects;
 
     private readonly int FacemaskAnimHash = Animator.StringToHash("facemask");
     private readonly int HappyAnimHash = Animator.StringToHash("happy");
