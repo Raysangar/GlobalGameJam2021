@@ -20,8 +20,16 @@ public class MainMenuController : MonoBehaviour
         Application.Quit();
     }
 
+    private void Update()
+    {
+        var position = selectionImage.position;
+        position.y = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform.position.y;
+        selectionImage.position = position;
+    }
+
     [SerializeField] Button startGameButton;
     [SerializeField] Button quitButton;
+    [SerializeField] Transform selectionImage;
 
     private System.Action startNewGameCallback;
 }
