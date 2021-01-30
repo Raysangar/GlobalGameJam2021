@@ -22,11 +22,15 @@ public class GameplayUiController : MonoBehaviour
     {
         int seconds = (int)gameManager.SecondsLeft;
         timer.text = seconds / 60 + ":" + (seconds % 60).ToString("D2");
+        var position = selectionImage.position;
+        position.y = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform.position.y;
+        selectionImage.position = position;
     }
 
     private void OnGameOver()
     {
         popupParent.SetActive(true);
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(playAgainButton.gameObject);
     }
 
     private void OnMainMenuButtonClicked()
@@ -60,6 +64,7 @@ public class GameplayUiController : MonoBehaviour
     [SerializeField] TMP_Text popupMessage;
     [SerializeField] Button mainMenuButton;
     [SerializeField] Button playAgainButton;
+    [SerializeField] Transform selectionImage;
 
     [Header("Screen Transition")]
     [SerializeField] Animator sceneTransitionAnimator;
