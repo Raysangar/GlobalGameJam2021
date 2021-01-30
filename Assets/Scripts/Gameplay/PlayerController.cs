@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     public System.Action OnPlayerFoundFacemask;
 
-    public void Initialize(bool playIntro)
+    public void Reset(bool playIntro)
     {
         animator.SetBool(FacemaskAnimHash, false);
         animator.SetBool(HappyAnimHash, playIntro);

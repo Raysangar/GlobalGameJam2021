@@ -200,46 +200,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
-                },
-                {
-                    "name": "ScrollWheel",
-                    "type": "PassThrough",
-                    "id": "19f12b06-c56d-450e-9d2d-7b15b418a27e",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "MiddleClick",
-                    "type": "PassThrough",
-                    "id": "de992d18-bafa-4ae3-96cd-4f82345e2f9c",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "RightClick",
-                    "type": "PassThrough",
-                    "id": "a0c7c640-b3d1-4bf1-9506-aa7a5f458c18",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "TrackedDevicePosition",
-                    "type": "PassThrough",
-                    "id": "a1c71fae-27ac-49d3-aa15-78937337a370",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "TrackedDeviceOrientation",
-                    "type": "PassThrough",
-                    "id": "e796e386-1f7f-4a19-80a5-b0edc23aad4e",
-                    "expectedControlType": "Quaternion",
-                    "processors": "",
-                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -526,39 +486,6 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Click",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "38c99815-14ea-4617-8627-164d27641299",
-                    "path": "<Mouse>/scroll",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "ScrollWheel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "24066f69-da47-44f3-a07e-0015fb02eb2e",
-                    "path": "<Mouse>/middleButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "MiddleClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4c191405-5738-4d4b-a523-c6a301dbf754",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

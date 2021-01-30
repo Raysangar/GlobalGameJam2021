@@ -1,20 +1,28 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Scene : MonoBehaviour
 {
-    public enum ID { LivingRoom }
+    public enum ID { Entrance, LivingRoom, Kitchen, Bedroom, Aisle, Bathroom, Garage }
 
     public System.Action<ID> OnPlayerGoesToScene;
     public InteractableObject[] InteractableObjects { get; private set; }
-
-    public ID Id { get; }
+    public ID Id => id;
 
     public void Initialize(System.Action<ID> playerGoesToNewSceneCallback)
     {
         foreach (var transitioner in GetComponentsInChildren<SceneTransitioner>())
             transitioner.OnPlayerGoesToNewScene += playerGoesToNewSceneCallback;
+        InteractableObjects = GetComponentsInChildren<InteractableObject>();
+        this.sceneTransitioners = new Dictionary<ID, SceneTransitioner>();
+        var sceneTransitioners = GetComponentsInChildren<SceneTransitioner>();
+        foreach (var transitioner in sceneTransitioners)
+            this.sceneTransitioners.Add(transitioner.TargetScene, transitioner);
+    }
+
+    public Vector3 GetPlayerInitialPositionComingFrom(ID scene)
+    {
+        return sceneTransitioners[scene].PlayerPosition;
     }
 
     public void ResetScene(int numberOfFaceMasks)
@@ -32,10 +40,7 @@ public class Scene : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        InteractableObjects = GetComponentsInChildren<InteractableObject>();
-    }
+    [SerializeField] ID id;
 
-    [SerializeField] Transform playerInitialPosition;
+    private Dictionary<ID, SceneTransitioner> sceneTransitioners;
 }

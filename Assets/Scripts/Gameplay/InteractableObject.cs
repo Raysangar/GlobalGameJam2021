@@ -5,8 +5,10 @@ public class InteractableObject : MonoBehaviour
     public void Initialize(bool hasFacemask)
     {
         this.hasFacemask = hasFacemask;
-        interactionCanvas.enabled = false;
         spriteRenderer.sprite = closedSprite;
+        keyboardInteraction.SetActive(false);
+        playstationGamepadInteraction.SetActive(false);
+        genericGamepadInteraction.SetActive(false);
     }
 
     public bool Open()
@@ -16,21 +18,30 @@ public class InteractableObject : MonoBehaviour
         return hasFacemask;
     }
 
+    private void Awake()
+    {
+        nearCollider = GetComponent<Collider2D>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        interactionCanvas.enabled = true;
+        keyboardInteraction.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        interactionCanvas.enabled = false;
+        keyboardInteraction.SetActive(false);
     }
 
-    [SerializeField] Collider2D nearCollider;
-    [SerializeField] Canvas interactionCanvas;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite closedSprite;
     [SerializeField] Sprite openedSprite;
 
+    [Header("Interaction Feedback")]
+    [SerializeField] GameObject keyboardInteraction;
+    [SerializeField] GameObject playstationGamepadInteraction;
+    [SerializeField] GameObject genericGamepadInteraction;
+
     private bool hasFacemask;
+    private Collider2D nearCollider;
 }
