@@ -5,16 +5,26 @@ public class UiManager : MonoBehaviour
     public void Initialize(GameManager gameManager, ScenesManager scenesManager)
     {
         this.gameManager = gameManager;
+        gameManager.OnGameAboutToStart += OnGameAboutToStart;
         mainMenu.Initialize(StartNewGame);
-        gameplayUi.Initialize(gameManager, scenesManager, StartNewGame, ShowMainMenu);
+        gameplayUi.Initialize(gameManager, scenesManager, PlayAgainCallback, ShowMainMenu);
         ShowMainMenu();
     }
 
     private void StartNewGame()
     {
-        gameplayUi.gameObject.SetActive(true);
         mainMenu.gameObject.SetActive(false);
-        gameManager.StartGame();
+        gameManager.StartGame(true);
+    }
+
+    private void PlayAgainCallback()
+    {
+        gameManager.StartGame(false);
+    }
+
+    private void OnGameAboutToStart(System.Action _)
+    {
+        gameplayUi.gameObject.SetActive(true);
     }
 
     private void ShowMainMenu()

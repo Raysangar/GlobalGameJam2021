@@ -15,15 +15,20 @@ public class PlayerController : MonoBehaviour
 
     public void GetUngry()
     {
-        animator.SetBool(HappyAnimHash, true);
+        animator.SetBool(HappyAnimHash, false);
     }
 
     public void OnPlayerMove(InputAction.CallbackContext context)
     {
-        var newDirection = context.ReadValue<Vector2>();
-        if (newDirection.x != 0 && newDirection.x != direction.x)
-            spriteRenderer.flipX = newDirection.x < 0;
-        direction = newDirection;
+        var movement = context.ReadValue<Vector2>();
+        Move(movement);
+    }
+
+    public void Move(Vector2 movement)
+    {
+        if (movement.x != 0 && movement.x != direction.x)
+            spriteRenderer.flipX = movement.x < 0;
+        direction = movement;
         animator.SetInteger(HorizontalAnimHash, Mathf.RoundToInt(direction.x));
         animator.SetInteger(VerticalAnimHash, Mathf.RoundToInt(direction.y));
     }

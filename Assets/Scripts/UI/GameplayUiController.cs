@@ -7,7 +7,8 @@ public class GameplayUiController : MonoBehaviour
 {
     public void Initialize(GameManager gameManager, ScenesManager scenesManager, System.Action startNewGameCallback, System.Action showMainMenuCallback)
     {
-        scenesManager.OnPlayerGoesToNewScene += OnPlayerGoesToNewScene;
+        scenesManager.OnPlayerGoesToNewScene += SceneTransition;
+        gameManager.OnGameAboutToStart += SceneTransition;
         this.gameManager = gameManager;
         this.showMainMenuCallback = showMainMenuCallback;
         this.startNewGameCallback = startNewGameCallback;
@@ -38,7 +39,7 @@ public class GameplayUiController : MonoBehaviour
         startNewGameCallback();
     }
 
-    private void OnPlayerGoesToNewScene(System.Action transitionTimeCallback)
+    private void SceneTransition(System.Action transitionTimeCallback)
     {
         sceneTransitionAnimator.SetTrigger(TransitionTrigger);
         StartCoroutine(WaitForCoroutine(transitionTimeCallback));

@@ -11,8 +11,10 @@ public class Main : MonoBehaviour
         gameManager = GetComponent<GameManager>();
         input = GetComponent<PlayerInput>();
         scenesManager = GetComponent<ScenesManager>();
+        introController = GetComponent<IntroController>();
 
-        gameManager.Initialize(player, scenesManager, input);
+        introController.Initialize(player, input);
+        gameManager.Initialize(player, scenesManager, input, introController);
         scenesManager.Initialize(player);
         uiManager.Initialize(gameManager, scenesManager);
     }
@@ -23,4 +25,5 @@ public class Main : MonoBehaviour
     private ScenesManager scenesManager;
     private PlayerInput input;
     private UiManager uiManager;
+    private IntroController introController;
 }
