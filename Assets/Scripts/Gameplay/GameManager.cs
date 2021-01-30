@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public System.Action OnGameOver;
     public float SecondsLeft { get; private set; }
+    public int CurrentLevel;
 
     public void Initialize(PlayerController player, ScenesManager scenesManager, PlayerInput input)
     {
@@ -19,15 +20,14 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        SecondsLeft = 120;
-        var sceneIds = System.Enum.GetValues(typeof(Scene.ID));
-        var facemaskInMap = new Dictionary<Scene.ID, int>()
-        {
-            { (Scene.ID)sceneIds.GetValue(Random.Range(0, sceneIds.Length)), 1 }
-        };
-        scenesManager.StartGame(facemaskInMap);
-        enabled = true;
-        input.enabled = true;
+        CurrentLevel = 0;
+        SetupLevel();
+    }
+
+    public void StartNextLevel()
+    {
+        ++CurrentLevel;
+        SetupLevel();
     }
 
     private void Start()
@@ -48,18 +48,32 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void SetupLevel()
+    {
+        SecondsLeft = 120;
+        var sceneIds = System.Enum.GetValues(typeof(Scene.ID));
+        var facemaskInMap = new Dictionary<Scene.ID, int>()
+        {
+            { (Scene.ID)sceneIds.GetValue(Random.Range(0, sceneIds.Length)), 1 }
+        };
+        scenesManager.StartGame(facemaskInMap);
+        enabled = true;
+        input.enabled = true;
+        player.transform.position = Vector3.zero;
+    }
+
     private void OnPlayerFoundFacemask()
     {
         playingEndGameAnim = true;
         input.enabled = false;
-        Debug.Log("Win");
+        StartNextLevel();
     }
 
     private void GameOver()
     {
         playingEndGameAnim = true;
         input.enabled = false;
-        Debug.Log("Game Over");
+        OnGameOver();
     }
 
     private PlayerController player;

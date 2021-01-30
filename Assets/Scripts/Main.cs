@@ -14,7 +14,7 @@ public class Main : MonoBehaviour
 
         gameManager.Initialize(player, scenesManager, input);
         scenesManager.Initialize(player);
-        uiManager.Initialize(gameManager);
+        uiManager.Initialize(gameManager, scenesManager);
     }
 
     [SerializeField] PlayerController player;

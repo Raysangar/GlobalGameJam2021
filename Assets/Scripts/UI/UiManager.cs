@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class UiManager : MonoBehaviour
 {
-    public void Initialize(GameManager gameManager)
+    public void Initialize(GameManager gameManager, ScenesManager scenesManager)
     {
         this.gameManager = gameManager;
         mainMenu.Initialize(StartNewGame);
-        gameplayUi.Initialize(gameManager, StartNewGame, ShowMainMenu);
+        gameplayUi.Initialize(gameManager, scenesManager, StartNewGame, ShowMainMenu);
         ShowMainMenu();
     }
 

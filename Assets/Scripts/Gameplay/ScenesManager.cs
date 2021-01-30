@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ScenesManager : MonoBehaviour
 {
+    public System.Action<System.Action> OnPlayerGoesToNewScene;
     public Dictionary<Scene.ID, Scene> Map { get; private set; }
 
     public void Initialize(PlayerController player)
@@ -13,7 +14,7 @@ public class ScenesManager : MonoBehaviour
         {
             scene.gameObject.SetActive(false);
             Map.Add(scene.Id, scene);
-            scene.Initialize(OnPlayerGoesToNewScene);
+            scene.Initialize(OnPlayerGoesToNewSceneCallback);
         }
     }
 
@@ -28,17 +29,24 @@ public class ScenesManager : MonoBehaviour
         }
     }
 
-    private void OnPlayerGoesToNewScene(Scene.ID newSceneId)
+    private void OnPlayerGoesToNewSceneCallback(Scene.ID newSceneId)
+    {
+        nextSceneId = newSceneId;
+        OnPlayerGoesToNewScene(MakeSceneTransition);
+    }
+
+    private void MakeSceneTransition()
     {
         Map[currentSceneId].gameObject.SetActive(false);
-        Map[newSceneId].gameObject.SetActive(true);
-        player.transform.position = Map[newSceneId].GetPlayerInitialPositionComingFrom(currentSceneId);
-        currentSceneId = newSceneId;
+        Map[nextSceneId].gameObject.SetActive(true);
+        player.transform.position = Map[nextSceneId].GetPlayerInitialPositionComingFrom(currentSceneId);
+        currentSceneId = nextSceneId;
     }
 
     [SerializeField] Scene[] scenes;
     [SerializeField] Scene.ID initialScene;
 
     private Scene.ID currentSceneId;
+    private Scene.ID nextSceneId;
     private PlayerController player;
 }
