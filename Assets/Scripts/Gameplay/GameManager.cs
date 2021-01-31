@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
-using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     public System.Action<System.Action> OnGameAboutToStart;
+    public System.Action OnGameStarted;
     public System.Action OnGameOver;
     public System.Action<bool> OnGamePuasedStateChanged;
 
@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
         player.Reset(false);
         introController.HideIntro();
         SoundManager.Instance.PlayTransitionSound();
+        OnGameStarted();
     }
 
     private void OnPlayerFoundFacemask()
@@ -89,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator NextLevelCoroutine()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         StartNextLevel();
     }
 

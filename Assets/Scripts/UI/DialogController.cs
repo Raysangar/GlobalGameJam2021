@@ -11,7 +11,7 @@ public class DialogController : MonoBehaviour
         Instance = this;
         this.gameManager = gameManager;
         gameManager.OnGamePuasedStateChanged += OnGamePausedStateChanged;
-        gameManager.OnGameAboutToStart += OnGameAboutToStart;
+        gameManager.OnGameStarted += OnGameStarted;
         player.OnFacemaskFound += OnPlayerFoundFacemask;
         gameManager.OnGameOver += OnGameOver;
         dialogParent.alpha = 0;
@@ -51,7 +51,8 @@ public class DialogController : MonoBehaviour
         dialog.text = "FINALLY! I FOUND IT!";
     }
 
-    private void OnGameAboutToStart(System.Action _)
+
+    private void OnGameStarted()
     {
         HideDialog();
         if (gameManager.CurrentLevel > 0)
