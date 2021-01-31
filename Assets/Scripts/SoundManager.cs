@@ -72,19 +72,28 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        
         sources = new List<AudioSource>();
         for (int i = 0; i < 5; ++i)
             sources.Add(gameObject.AddComponent<AudioSource>());
+
         stepSource = gameObject.AddComponent<AudioSource>();
         stepSource.loop = true;
         waitForStep = new WaitForSeconds(stepSoundPeriod);
+
+        musicSource = gameObject.AddComponent<AudioSource>();
+        musicSource.clip = mainMusic;
+        musicSource.loop = true;
+        musicSource.Play();
     }
 
     [SerializeField] AudioClip[] stepsSounds;
     [SerializeField] float stepSoundPeriod;
     [SerializeField] AudioClip grabObjectSound;
     [SerializeField] AudioClip[] transitionSounds;
+    [SerializeField] AudioClip mainMusic;
 
+    private AudioSource musicSource;
     private List<AudioSource> sources;
     private AudioSource stepSource;
     private WaitForSeconds waitForStep;

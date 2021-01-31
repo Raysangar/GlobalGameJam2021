@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class UiManager : MonoBehaviour
 {
-    public void Initialize(GameManager gameManager, ScenesManager scenesManager)
+    public void Initialize(GameManager gameManager, ScenesManager scenesManager, PlayerController player)
     {
         this.gameManager = gameManager;
         gameManager.OnGameAboutToStart += OnGameAboutToStart;
         mainMenu.Initialize(StartNewGame);
         gameplayUi.Initialize(gameManager, scenesManager, PlayAgainCallback, ShowMainMenu);
+        dialogController.Initialize(gameManager, player);
         ShowMainMenu();
     }
 
@@ -35,6 +36,7 @@ public class UiManager : MonoBehaviour
 
     [SerializeField] GameplayUiController gameplayUi;
     [SerializeField] MainMenuController mainMenu;
+    [SerializeField] DialogController dialogController;
 
     private GameManager gameManager;
 }

@@ -40,6 +40,7 @@ public class IntroController : MonoBehaviour
         player.Move(Vector2.zero);
         player.GetUngry();
         introAnimator.SetBool(IntroTrigger, false);
+        DialogController.Instance.ShowDialog(Dialog);
         yield return new WaitForSeconds(2);
         player.Move(Vector2.left);
         yield return new WaitUntil(() => Vector2.Distance(player.transform.position, playerInitialPosition.position) < .01f);
@@ -57,4 +58,10 @@ public class IntroController : MonoBehaviour
     private PlayerInput input;
 
     private readonly int IntroTrigger = Animator.StringToHash("happy");
+
+    private static readonly string[] Dialog = new string[]
+    {
+        "ARGGGGGG! I FORGOT MY FACEMASK AGAIN!!",
+        "I HAVE TO GO BACK HOME AND GET IT BEFORE THE SUPERMARKET CLOSES"
+    };
 }

@@ -17,7 +17,7 @@ public class Main : MonoBehaviour
         introController.Initialize(player, input);
         gameManager.Initialize(player, scenesManager, input, introController);
         scenesManager.Initialize(player, cameraController);
-        uiManager.Initialize(gameManager, scenesManager);
+        uiManager.Initialize(gameManager, scenesManager, player);
     }
 
     [SerializeField] PlayerController player;

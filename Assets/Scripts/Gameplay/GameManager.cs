@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public System.Action<System.Action> OnGameAboutToStart;
     public System.Action OnGameOver;
+    public System.Action<bool> OnGamePuasedStateChanged;
+
     public float SecondsLeft { get; private set; }
     public int CurrentLevel { get; private set; }
 
@@ -16,7 +18,7 @@ public class GameManager : MonoBehaviour
         this.player = player;
         this.scenesManager = scenesManager;
         this.introController = introController;
-        player.OnPlayerFoundFacemask += OnPlayerFoundFacemask;
+        player.OnFacemaskFound += OnPlayerFoundFacemask;
         enabled = false;
         input.enabled = false;
     }
@@ -34,6 +36,15 @@ public class GameManager : MonoBehaviour
     {
         ++CurrentLevel;
         SetupLevel();
+    }
+
+    public void OnStartButtonClicked(InputAction.CallbackContext context)
+    {
+        if (!playingEndGameAnim)
+        {
+            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+            OnGamePuasedStateChanged(Time.timeScale == 0);
+        }
     }
 
     private void Update()
@@ -56,13 +67,9 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelReadyToShow()
     {
-        SecondsLeft = 120;
-        var sceneIds = System.Enum.GetValues(typeof(Scene.ID));
-        var facemaskInMap = new Dictionary<Scene.ID, int>()
-        {
-            { Scene.ID.Entrance, 1 }
-        };
-        scenesManager.StartGame(facemaskInMap);
+        var levelDifficulty = difficultySettings.GetFacemasksSetupForLevel(CurrentLevel);
+        SecondsLeft = levelDifficulty.TimerDuration;
+        scenesManager.StartGame(levelDifficulty.FacemasksSetup);
         enabled = true;
         input.enabled = true;
         player.transform.position = Vector3.zero;
@@ -91,6 +98,8 @@ public class GameManager : MonoBehaviour
         input.enabled = false;
         OnGameOver();
     }
+
+    [SerializeField] DifficultySettings difficultySettings;
 
     private PlayerController player;
     private PlayerInput input;

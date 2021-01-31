@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-    public System.Action OnPlayerFoundFacemask;
+    public System.Action OnFacemaskFound;
 
     public void Reset(bool playIntro)
     {
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         {
             if (nearInteractableObjects[0].Open())
             {
-                OnPlayerFoundFacemask();
+                OnFacemaskFound();
                 animator.SetBool(FacemaskAnimHash, true);
             }
         }

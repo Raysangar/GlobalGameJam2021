@@ -22,9 +22,15 @@ public class GameplayUiController : MonoBehaviour
     {
         int seconds = (int)gameManager.SecondsLeft;
         timer.text = seconds / 60 + ":" + (seconds % 60).ToString("D2");
-        var position = selectionImage.position;
-        position.y = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform.position.y;
-        selectionImage.position = position;
+
+        levelText.text = "Level " + gameManager.CurrentLevel;
+
+        if (popupParent.activeSelf)
+        {
+            var position = selectionImage.position;
+            position.y = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform.position.y;
+            selectionImage.position = position;
+        }
     }
 
     private void OnGameOver()
