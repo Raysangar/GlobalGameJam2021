@@ -16,6 +16,14 @@ public class DialogController : MonoBehaviour
         dialogParent.alpha = 0;
     }
 
+    public void ShowWrongFacemaskDialog(string message)
+    {
+        if (string.IsNullOrEmpty(message))
+            ShowDialog(WrongFacemaskDialog[Random.Range(0, WrongFacemaskDialog.Length)]);
+        else
+            ShowDialog(message);
+    }
+
     public void ShowDialog(string message)
     {
         CancelHideDialogIfNecessary();
@@ -100,4 +108,12 @@ public class DialogController : MonoBehaviour
 
     private Coroutine dialogCoroutine;
     private WaitForSeconds WaitForSeconds = new WaitForSeconds(2);
+
+    private static readonly string[] WrongFacemaskDialog = new string[]
+    {
+        "This one is my father's facemask!",
+        "DIRTY! Who leaves dirty facemasks arround the house?!",
+        "DO WE COLLECT BROKEN FACEMASKS OR WHAT?",
+        "USELESS! ARGGG!!"
+    };
 }

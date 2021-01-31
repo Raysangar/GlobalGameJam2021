@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MainAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f726c4f040162db4ab7522bd5553b06f, type: 3}
+    - {fileID: 102900000, guid: 4061595b51b458f4b95a5475b0f6c76f, type: 3}
+    totalSpriteSurfaceArea: 2538366
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8fe336108008dd2439fa6ab0f734040c, type: 3}
+  - {fileID: 21300000, guid: 205b3450b7e02884c971845a0602a6db, type: 3}
+  - {fileID: 21300000, guid: e89fcf315f8817b4a90f84eae20d1c9e, type: 3}
+  - {fileID: 3840749433329779590, guid: 4df11c51702fac245853c436969b8727, type: 3}
+  - {fileID: -4660772958183512353, guid: 2e360a225b6007e4fb921c45ee8a98bb, type: 3}
+  - {fileID: 21300000, guid: 27b8fad222883b440a011e9185821e2a, type: 3}
+  - {fileID: 21300000, guid: 8f917013700a32b4fbbe283f786cbff7, type: 3}
+  - {fileID: 4915440983496847725, guid: f6ff4c336835c3847b969a9cc25b1de6, type: 3}
+  - {fileID: 21300000, guid: 4bf078548138d074e857544bd2696b15, type: 3}
+  - {fileID: 21300000, guid: ebb534e50c52b7041bcab5f4529923e1, type: 3}
+  - {fileID: 21300000, guid: 1e970c06c5e410f4f8c210af6778979d, type: 3}
+  - {fileID: 21300000, guid: 3134891679e6b05429bf6cca35a5dcaa, type: 3}
+  - {fileID: 21300000, guid: 71adee56d5f979f4f903973a321c9c96, type: 3}
+  - {fileID: 6734678371148347802, guid: 354616c62e5dfb54fa2c713fcfab2e58, type: 3}
+  - {fileID: 21300000, guid: e0456507626a4fa48b49e74267337afe, type: 3}
+  - {fileID: 21300000, guid: bb14193799860b948b001d230a73d26b, type: 3}
+  - {fileID: 21300000, guid: f251fd47a4d481e40882fc72c0d830cd, type: 3}
+  - {fileID: 21300000, guid: 635b1367cf2343f4ebc7a97d0926ccce, type: 3}
+  - {fileID: 21300000, guid: c99a72b7710ce65428845f917a1f9c1a, type: 3}
+  - {fileID: -3521427111303423466, guid: 163ab218624b05441a43bdef9c20fa16, type: 3}
+  - {fileID: 21300000, guid: aca0dd582848e164997acd0653a9514c, type: 3}
+  - {fileID: 21300000, guid: a0817078f1a6158428260dca18b3df5a, type: 3}
+  - {fileID: 21300000, guid: 34e36d78640a2594f930a0171ad3c48b, type: 3}
+  - {fileID: 21300000, guid: fe68baa8dcc1ae64fa2403c85b24ff14, type: 3}
+  - {fileID: 21300000, guid: 063311395053daa4a8ddfab853289721, type: 3}
+  - {fileID: 21300000, guid: e11782a979d7e9d40a5a18bce0e9fa6b, type: 3}
+  - {fileID: 21300000, guid: a4a4eea955c169f448b53c172f7948a3, type: 3}
+  - {fileID: 21300000, guid: 6dde209a68bbb4f448160fff151ffce7, type: 3}
+  - {fileID: 21300000, guid: d031acbabf328fb46af2da83bf4eaba3, type: 3}
+  - {fileID: -6858186359995482414, guid: 6585f44b97f26c344a4475b04b6444ad, type: 3}
+  - {fileID: 21300000, guid: 8f2469bb539002b4aa0f49db30da8395, type: 3}
+  - {fileID: 21300000, guid: eb23e2cb91fc15f49aa6408d618c1cc2, type: 3}
+  - {fileID: 21300000, guid: 10b816bc211a86a43b4484af02809c94, type: 3}
+  - {fileID: 21300000, guid: c85f07ad94fe23643960b712d0cac865, type: 3}
+  - {fileID: 21300000, guid: 9f617afdbd0a1d84f9b82d4de46a0530, type: 3}
+  - {fileID: 21300000, guid: b215312f764b1eb43a1d409fddb51679, type: 3}
+  - {fileID: 21300000, guid: be6ea69fe0b8fa24981dccaa71f0bdca, type: 3}
+  - {fileID: 3907403176429675428, guid: 0b51b3effb038624db6ee4a597e9556a, type: 3}
+  - {fileID: -4868298228739427122, guid: 0b51b3effb038624db6ee4a597e9556a, type: 3}
+  - {fileID: 21300000, guid: 251d6dfff6016ad40bd1727fe34cb3e4, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Letra_creditos
+  - Keyboard
+  - Esc_habitacion_base
+  - CajonAbierto_0
+  - mesita_abierta
+  - FondoDialogo_dimensionesgrandes
+  - "ba\xF1otapacerrada"
+  - armario_abierto
+  - Logo
+  - Letra_playagain
+  - Fondo
+  - Mascarilla
+  - GenericGamepad
+  - alfombra
+  - FrontHappy
+  - FrontUngry
+  - LateralWalkHappy
+  - Facemask1
+  - Esc_cocina
+  - tapa
+  - Car close
+  - LivingRoom
+  - Letra_play
+  - mami1
+  - memato
+  - Letra_exit
+  - PlaystationGamepad
+  - Back
+  - temato
+  - cajon
+  - Pasillo
+  - Letra_mainmenu
+  - Facemask2
+  - document
+  - LateralWalkUngry
+  - sister
+  - IconitoMenuLetras
+  - left_door
+  - right_door
+  - killme
+  m_RenderDataMap: {}
+  m_Tag: MainAtlas
+  m_IsVariant: 0

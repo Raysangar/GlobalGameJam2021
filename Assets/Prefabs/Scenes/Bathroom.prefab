@@ -403,6 +403,10 @@ PrefabInstance:
       propertyPath: canBeGoodFacemask
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 878583364559861139, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
+      propertyPath: customWrongDialog
+      value: This is a quirurgic facemask. IT CAN'T BE WASHED!!
+      objectReference: {fileID: 0}
     - target: {fileID: 933567306774188346, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -504,6 +508,10 @@ PrefabInstance:
     - target: {fileID: 878583364559861139, guid: e2ea283d5eabbbe4f86f9c400f82239f, type: 3}
       propertyPath: canBeGoodFacemask
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 878583364559861139, guid: e2ea283d5eabbbe4f86f9c400f82239f, type: 3}
+      propertyPath: customWrongDialog
+      value: The toilet was almost clogged!!
       objectReference: {fileID: 0}
     - target: {fileID: 933567306774188346, guid: e2ea283d5eabbbe4f86f9c400f82239f, type: 3}
       propertyPath: m_RootOrder

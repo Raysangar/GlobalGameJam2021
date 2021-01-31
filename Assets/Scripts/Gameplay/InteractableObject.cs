@@ -26,6 +26,8 @@ public class InteractableObject : MonoBehaviour
         nearCollider.enabled = false;
         spriteRenderer.sprite = openedSprite;
         SoundManager.Instance.PlayGrabObjectSound(openSound);
+        if (!hasFacemask)
+            DialogController.Instance.ShowWrongFacemaskDialog(customWrongDialog);
         return hasFacemask;
     }
 
@@ -71,6 +73,7 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] Sprite openedSprite;
     [SerializeField] AudioClip openSound;
     [SerializeField] bool canBeGoodFacemask = true;
+    [SerializeField] string customWrongDialog;
 
     [Header("Interaction Feedback")]
     [SerializeField] GameObject keyboardInteraction;

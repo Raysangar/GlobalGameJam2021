@@ -415,6 +415,10 @@ PrefabInstance:
       propertyPath: canBeGoodFacemask
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 878583364559861139, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
+      propertyPath: customWrongDialog
+      value: VADER!! DON'T EAT MY FACEMASKS!!
+      objectReference: {fileID: 0}
     - target: {fileID: 933567306774188346, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
       propertyPath: m_RootOrder
       value: 3
