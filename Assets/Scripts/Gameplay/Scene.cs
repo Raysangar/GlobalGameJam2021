@@ -33,8 +33,6 @@ public class Scene : MonoBehaviour
 
     public void ResetScene(int numberOfFaceMasks, int level)
     {
-        if (numberOfFaceMasks > 0)
-            Debug.Log(id);
         for (int iObject = 0; iObject < InteractableObjects.Length; ++iObject)
         {
             bool hasMask = false;

@@ -8,6 +8,12 @@ public class DifficultySettings : ScriptableObject
     {
         var levelSetup = levels[Mathf.Clamp(level, 0, levels.Length - 1)];
         cachedLevelDifficulty.TimerDuration = levelSetup.TimerDurationInSeconds;
+        if (level >= levels.Length)
+        {
+            cachedLevelDifficulty.TimerDuration -= 2 * (level + 1 - levels.Length);
+            if (cachedLevelDifficulty.TimerDuration < 25)
+                cachedLevelDifficulty.TimerDuration = 25;
+        }
         cachedLevelDifficulty.FacemasksSetup.Clear();
 
         int totalWeight = 0;
