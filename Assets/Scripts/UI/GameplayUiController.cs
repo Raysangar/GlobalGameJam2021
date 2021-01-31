@@ -20,10 +20,20 @@ public class GameplayUiController : MonoBehaviour
 
     private void Update()
     {
-        int seconds = (int)gameManager.SecondsLeft;
-        timer.text = seconds / 60 + ":" + (seconds % 60).ToString("D2");
+        if (gameManager.CurrentLevel == 0)
+        {
+            if (timeParent.activeSelf)
+                timeParent.SetActive(false);
+        }
+        else
+        {
+            if (!timeParent.activeSelf)
+                timeParent.SetActive(true);
+            int seconds = (int)gameManager.SecondsLeft;
+            timer.text = seconds / 60 + ":" + (seconds % 60).ToString("D2");
+        }
 
-        levelText.text = "Level " + (gameManager.CurrentLevel + 1);
+        levelText.text = gameManager.CurrentLevel == 0 ? "Tutorial" : ("Level " + gameManager.CurrentLevel);
 
         if (popupParent.activeSelf)
         {
@@ -36,6 +46,7 @@ public class GameplayUiController : MonoBehaviour
     private void OnGameOver()
     {
         popupParent.SetActive(true);
+        popupMessage.text = "NOOOOOO!!!\nThe supermarket closed\nLevel reached: " + gameManager.CurrentLevel;
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(playAgainButton.gameObject);
     }
 
@@ -62,6 +73,7 @@ public class GameplayUiController : MonoBehaviour
     }
 
     [Header("HUD")]
+    [SerializeField] GameObject timeParent;
     [SerializeField] TMP_Text timer;
     [SerializeField] TMP_Text levelText;
 

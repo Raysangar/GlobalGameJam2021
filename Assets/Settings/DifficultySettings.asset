@@ -13,17 +13,11 @@ MonoBehaviour:
   m_Name: DifficultySettings
   m_EditorClassIdentifier: 
   levels:
-  - FacemasksCount: 5
+  - FacemasksCount: 1
     TimerDurationInSeconds: 120
     FacemaskProbabilityWeightForEachScene:
-    - id: 0
-      weight: 50
-    - id: 1
-      weight: 50
-    - id: 2
-      weight: 30
-    - id: 4
-      weight: 20
+    - id: 6
+      weight: 1
   - FacemasksCount: 5
     TimerDurationInSeconds: 120
     FacemaskProbabilityWeightForEachScene:

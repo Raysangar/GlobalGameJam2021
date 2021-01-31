@@ -81,7 +81,8 @@ public class MainMenuController : MonoBehaviour
     private void Update()
     {
         var position = selectionImage.position;
-        position.y = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform.position.y;
+        if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject != null)
+            position.y = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform.position.y;
         selectionImage.position = position;
     }
 

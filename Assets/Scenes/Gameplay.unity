@@ -891,6 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7e02f0f772edd47b1b7dd50498b40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeParent: {fileID: 869298990}
   timer: {fileID: 796914724}
   levelText: {fileID: 699575962}
   popupParent: {fileID: 101039974}

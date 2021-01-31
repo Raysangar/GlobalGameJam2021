@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!playingEndGameAnim)
+        if (!playingEndGameAnim && CurrentLevel > 0)
         {
             SecondsLeft -= Time.deltaTime;
             if (SecondsLeft <= 0)
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     {
         var levelDifficulty = difficultySettings.GetFacemasksSetupForLevel(CurrentLevel);
         SecondsLeft = levelDifficulty.TimerDuration;
-        scenesManager.StartGame(levelDifficulty.FacemasksSetup);
+        scenesManager.StartGame(levelDifficulty.FacemasksSetup, CurrentLevel);
         enabled = true;
         input.enabled = true;
         player.transform.position = Vector3.zero;

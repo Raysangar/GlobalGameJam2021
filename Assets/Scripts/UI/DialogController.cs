@@ -55,7 +55,7 @@ public class DialogController : MonoBehaviour
     {
         HideDialog();
         if (gameManager.CurrentLevel > 0)
-            ShowDialog("Level " + (gameManager.CurrentLevel + 1));
+            ShowDialog("Level " + gameManager.CurrentLevel);
     }
 
     private void OnGamePausedStateChanged(bool paused)

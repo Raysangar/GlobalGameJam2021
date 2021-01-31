@@ -19,14 +19,14 @@ public class ScenesManager : MonoBehaviour
         }
     }
 
-    public void StartGame(Dictionary<Scene.ID, int> facemasksInMap)
+    public void StartGame(Dictionary<Scene.ID, int> facemasksInMap, int level)
     {
         currentSceneId = initialScene;
         foreach(var scene in scenes)
         {
             int numberOfFacemask;
             facemasksInMap.TryGetValue(scene.Id, out numberOfFacemask);
-            scene.ResetScene(numberOfFacemask);
+            scene.ResetScene(numberOfFacemask, level);
             if (scene.Id == initialScene)
             {
                 scene.gameObject.SetActive(true);

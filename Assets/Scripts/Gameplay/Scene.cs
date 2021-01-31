@@ -31,18 +31,18 @@ public class Scene : MonoBehaviour
         return sceneTransitioners[scene].PlayerPosition;
     }
 
-    public void ResetScene(int numberOfFaceMasks)
+    public void ResetScene(int numberOfFaceMasks, int level)
     {
         for (int iObject = 0; iObject < InteractableObjects.Length; ++iObject)
         {
             bool hasMask = false;
-            if (numberOfFaceMasks > 0 && InteractableObjects[iObject].CanBeGoodFacemask)
+            if (numberOfFaceMasks > 0 && InteractableObjects[iObject].CanBeGoodFacemask(level))
             {
                 hasMask = Random.Range(iObject, InteractableObjects.Length) == iObject;
                 if (hasMask)
                     --numberOfFaceMasks;
             }
-            InteractableObjects[iObject].SetupForLevel(hasMask);
+            InteractableObjects[iObject].SetupForLevel(hasMask, level == 0);
         }
     }
 

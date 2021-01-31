@@ -476,6 +476,10 @@ PrefabInstance:
       propertyPath: openedSprite
       value: 
       objectReference: {fileID: 3907403176429675428, guid: 0b51b3effb038624db6ee4a597e9556a, type: 3}
+    - target: {fileID: 878583364559861139, guid: e2ea283d5eabbbe4f86f9c400f82239f, type: 3}
+      propertyPath: shouldAppearOnFirstLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 933567306774188346, guid: e2ea283d5eabbbe4f86f9c400f82239f, type: 3}
       propertyPath: m_RootOrder
       value: 1

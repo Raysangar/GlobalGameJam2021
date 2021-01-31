@@ -143,6 +143,17 @@
                 },
                 {
                     "name": "",
+                    "id": "d600579e-060e-4046-acf0-66fef4af493b",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4ec88f68-f489-4445-81a3-c3b404d818ef",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -166,10 +177,21 @@
                 {
                     "name": "",
                     "id": "3e372828-cf48-475f-a8cd-142b9999abe1",
-                    "path": "*/{Cancel}",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad;Keyboard&Mouse",
+                    "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "871034fa-9a3d-40f1-8141-e19f1bd5bea0",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false

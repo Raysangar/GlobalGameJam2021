@@ -66,12 +66,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        nearInteractableObjects.Add(collision.GetComponent<InteractableObject>());
+        var interactableObject = collision.GetComponent<InteractableObject>();
+        if (interactableObject != null)
+            nearInteractableObjects.Add(interactableObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        nearInteractableObjects.Remove(collision.GetComponent<InteractableObject>());
+        var interactableObject = collision.GetComponent<InteractableObject>();
+        if (interactableObject != null)
+            nearInteractableObjects.Remove(interactableObject);
     }
 
     [SerializeField] float speed;

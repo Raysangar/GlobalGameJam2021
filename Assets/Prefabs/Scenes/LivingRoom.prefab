@@ -64,6 +64,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  maxLeftPosition: 0
+  maxRightPosition: 0
 --- !u!212 &8265621213423287492
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -662,6 +664,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8438523159354919539}
     m_Modifications:
+    - target: {fileID: 878583364559861139, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
+      propertyPath: shouldAppearOnFirstLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 878583364559861139, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
+      propertyPath: firstLevelCustomWrongDialog
+      value: BROKEN! REALLY?! Maybe mum knows where it is
+      objectReference: {fileID: 0}
     - target: {fileID: 933567306774188346, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
       propertyPath: m_RootOrder
       value: 5

@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.DualShock;
-using UnityEngine.InputSystem.XInput;
 
 public class InteractableObject : MonoBehaviour
 {
-    public bool CanBeGoodFacemask => canBeGoodFacemask;
+    public bool CanBeGoodFacemask(int currentLevel)
+    {
+        return canBeGoodFacemask && (currentLevel > 0 || shouldAppearOnFirstLevel);
+    }
 
     public void Initialize(PlayerInput input)
     {
@@ -13,9 +15,11 @@ public class InteractableObject : MonoBehaviour
         nearCollider = GetComponent<Collider2D>();
     }
 
-    public void SetupForLevel(bool hasFacemask)
+    public void SetupForLevel(bool hasFacemask, bool isTutorial)
     {
         this.hasFacemask = hasFacemask;
+        this.isTutorial = isTutorial;
+        gameObject.SetActive(!isTutorial || shouldAppearOnFirstLevel);
         spriteRenderer.sprite = closedSprite;
         nearCollider.enabled = true;
         keyboardInteraction.SetActive(false);
@@ -29,7 +33,7 @@ public class InteractableObject : MonoBehaviour
         spriteRenderer.sprite = openedSprite;
         SoundManager.Instance.PlayGrabObjectSound(openSound);
         if (!hasFacemask)
-            DialogController.Instance.ShowWrongFacemaskDialog(customWrongDialog);
+            DialogController.Instance.ShowWrongFacemaskDialog(isTutorial ? firstLevelCustomWrongDialog : customWrongDialog);
         return hasFacemask;
     }
 
@@ -71,6 +75,8 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] AudioClip openSound;
     [SerializeField] bool canBeGoodFacemask = true;
     [SerializeField] string customWrongDialog;
+    [SerializeField] bool shouldAppearOnFirstLevel;
+    [SerializeField] string firstLevelCustomWrongDialog;
 
     [Header("Interaction Feedback")]
     [SerializeField] GameObject keyboardInteraction;
@@ -78,6 +84,7 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] GameObject genericGamepadInteraction;
 
     private bool hasFacemask;
+    private bool isTutorial;
     private Collider2D nearCollider;
     private PlayerInput input;
 }
