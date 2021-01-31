@@ -13,12 +13,27 @@ public class SoundManager : MonoBehaviour
         source.Play();
     }
 
+    public void PlayButtonClickedSound()
+    {
+        PlaySound(clickButtonSound);
+    }
+
     public void PlayCountdownMusic()
     {
         if (musicSource.clip != countdownMusic)
         {
             musicSource.Stop();
             musicSource.clip = countdownMusic;
+            musicSource.Play();
+        }
+    }
+
+    public void PlayMainMenuMusic()
+    {
+        if (musicSource.clip != mainMenuMusic)
+        {
+            musicSource.Stop();
+            musicSource.clip = mainMenuMusic;
             musicSource.Play();
         }
     }
@@ -112,7 +127,7 @@ public class SoundManager : MonoBehaviour
         waitForStep = new WaitForSeconds(stepSoundPeriod);
 
         musicSource = gameObject.AddComponent<AudioSource>();
-        musicSource.clip = mainMusic;
+        musicSource.clip = mainMenuMusic;
         musicSource.loop = true;
         musicSource.Play();
     }
@@ -125,6 +140,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip countdownMusic;
     [SerializeField] AudioClip facemaskFoundSound;
     [SerializeField] AudioClip gameOverSound;
+    [SerializeField] AudioClip clickButtonSound;
+    [SerializeField] AudioClip mainMenuMusic;
 
     private AudioSource musicSource;
     private List<AudioSource> sources;

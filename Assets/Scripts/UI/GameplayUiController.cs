@@ -52,13 +52,14 @@ public class GameplayUiController : MonoBehaviour
 
     private void OnMainMenuButtonClicked()
     {
-        SoundManager.Instance.PlayMainMusic();
+        SoundManager.Instance.PlayButtonClickedSound();
         popupParent.SetActive(false);
         showMainMenuCallback();
     }
 
     private void OnPlayAgainButtonClicked()
     {
+        SoundManager.Instance.PlayButtonClickedSound();
         SoundManager.Instance.PlayMainMusic();
         popupParent.SetActive(false);
         startNewGameCallback();

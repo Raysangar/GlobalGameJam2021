@@ -16,16 +16,20 @@ public class MainMenuController : MonoBehaviour
 
     private void OnStartGameButtonClicked()
     {
+        SoundManager.Instance.PlayButtonClickedSound();
+        SoundManager.Instance.PlayMainMusic();
         startNewGameCallback();
     }
 
     private void OnQuitButtonClicked()
     {
+        SoundManager.Instance.PlayButtonClickedSound();
         Application.Quit();
     }
 
     private void OnCreditsButtonClicked()
     {
+        SoundManager.Instance.PlayButtonClickedSound();
         StartCoroutine(MainMenuFadeCoroutine());
         StartCoroutine(CreditsMovementCoroutine());
     }
@@ -75,6 +79,8 @@ public class MainMenuController : MonoBehaviour
 
     private void OnEnable()
     {
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlayMainMenuMusic();
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(startGameButton.gameObject);
     }
 

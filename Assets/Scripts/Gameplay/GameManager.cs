@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour
     {
         playingEndGameAnim = true;
         input.enabled = false;
+        SoundManager.Instance.PlayMainMusic();
         SoundManager.Instance.PlayGameOverSound();
         OnGameOver();
     }
