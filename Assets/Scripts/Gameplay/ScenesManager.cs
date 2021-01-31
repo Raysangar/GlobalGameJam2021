@@ -21,6 +21,7 @@ public class ScenesManager : MonoBehaviour
 
     public void StartGame(Dictionary<Scene.ID, int> facemasksInMap)
     {
+        currentSceneId = initialScene;
         foreach(var scene in scenes)
         {
             int numberOfFacemask;

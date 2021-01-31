@@ -23,7 +23,7 @@ public class GameplayUiController : MonoBehaviour
         int seconds = (int)gameManager.SecondsLeft;
         timer.text = seconds / 60 + ":" + (seconds % 60).ToString("D2");
 
-        levelText.text = "Level " + gameManager.CurrentLevel;
+        levelText.text = "Level " + (gameManager.CurrentLevel + 1);
 
         if (popupParent.activeSelf)
         {

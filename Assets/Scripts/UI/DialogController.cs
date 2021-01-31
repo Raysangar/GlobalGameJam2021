@@ -9,6 +9,7 @@ public class DialogController : MonoBehaviour
     public void Initialize(GameManager gameManager, PlayerController player)
     {
         Instance = this;
+        this.gameManager = gameManager;
         gameManager.OnGamePuasedStateChanged += OnGamePausedStateChanged;
         gameManager.OnGameAboutToStart += OnGameAboutToStart;
         player.OnFacemaskFound += OnPlayerFoundFacemask;
@@ -53,6 +54,8 @@ public class DialogController : MonoBehaviour
     private void OnGameAboutToStart(System.Action _)
     {
         HideDialog();
+        if (gameManager.CurrentLevel > 0)
+            ShowDialog("Level " + (gameManager.CurrentLevel + 1));
     }
 
     private void OnGamePausedStateChanged(bool paused)
@@ -106,8 +109,9 @@ public class DialogController : MonoBehaviour
     [SerializeField] CanvasGroup dialogParent;
     [SerializeField] TMP_Text dialog;
 
+    private GameManager gameManager;
     private Coroutine dialogCoroutine;
-    private WaitForSeconds WaitForSeconds = new WaitForSeconds(2);
+    private WaitForSeconds WaitForSeconds = new WaitForSeconds(3);
 
     private static readonly string[] WrongFacemaskDialog = new string[]
     {

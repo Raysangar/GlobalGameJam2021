@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     public void StartNextLevel()
     {
+        playingEndGameAnim = false;
         ++CurrentLevel;
         SetupLevel();
     }

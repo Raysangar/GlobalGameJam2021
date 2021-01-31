@@ -10,8 +10,6 @@ public class DifficultySettings : ScriptableObject
         cachedLevelDifficulty.TimerDuration = levelSetup.TimerDurationInSeconds;
         cachedLevelDifficulty.FacemasksSetup.Clear();
 
-        int facemasksCount = Random.Range(levelSetup.MinFacemasks, levelSetup.MaxFacemasks + 1);
-
         int totalWeight = 0;
         foreach (var weightSetup in levelSetup.FacemaskProbabilityWeightForEachScene)
         {
@@ -19,7 +17,7 @@ public class DifficultySettings : ScriptableObject
             totalWeight += weightSetup.weight;
         }
 
-        for (int i = 0; i <  facemasksCount; ++i)
+        for (int i = 0; i <  levelSetup.FacemasksCount; ++i)
         {
             int outcome = Random.Range(0, totalWeight);
             int j = -1;
@@ -41,8 +39,7 @@ public class DifficultySettings : ScriptableObject
     [System.Serializable]
     private class LevelDifficultySettings
     {
-        public int MinFacemasks;
-        public int MaxFacemasks;
+        public int FacemasksCount;
         public int TimerDurationInSeconds;
         public SceneFacemaskWeight[] FacemaskProbabilityWeightForEachScene;
     }

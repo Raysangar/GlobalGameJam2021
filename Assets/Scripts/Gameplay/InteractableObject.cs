@@ -10,12 +10,14 @@ public class InteractableObject : MonoBehaviour
     public void Initialize(PlayerInput input)
     {
         this.input = input;
+        nearCollider = GetComponent<Collider2D>();
     }
 
     public void SetupForLevel(bool hasFacemask)
     {
         this.hasFacemask = hasFacemask;
         spriteRenderer.sprite = closedSprite;
+        nearCollider.enabled = true;
         keyboardInteraction.SetActive(false);
         playstationGamepadInteraction.SetActive(false);
         genericGamepadInteraction.SetActive(false);
@@ -29,11 +31,6 @@ public class InteractableObject : MonoBehaviour
         if (!hasFacemask)
             DialogController.Instance.ShowWrongFacemaskDialog(customWrongDialog);
         return hasFacemask;
-    }
-
-    private void Awake()
-    {
-        nearCollider = GetComponent<Collider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

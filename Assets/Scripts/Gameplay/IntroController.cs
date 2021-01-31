@@ -41,9 +41,9 @@ public class IntroController : MonoBehaviour
         player.GetUngry();
         introAnimator.SetBool(IntroTrigger, false);
         DialogController.Instance.ShowDialog(Dialog);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         player.Move(Vector2.left);
-        yield return new WaitUntil(() => Vector2.Distance(player.transform.position, playerInitialPosition.position) < .01f);
+        yield return new WaitUntil(() => Vector2.Distance(player.transform.position, playerInitialPosition.position) < .02f);
         SoundManager.Instance.StopSound(backgroundSounds);
         introFinishedCallback();
     }

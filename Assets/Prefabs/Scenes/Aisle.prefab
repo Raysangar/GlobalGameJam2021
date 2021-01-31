@@ -429,6 +429,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0518533, y: 0.3103906}
   m_EdgeRadius: 0
+--- !u!114 &519126937656114749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7423376023064344226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d663dcf5c82b564a9204e98eb78ebea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog:
+  - EY! WHERE'S MY FACEMASK?!
+  - 'Sister: And what do I know!'
+  newCollider: {fileID: 2837139017115813752}
+--- !u!58 &2837139017115813752
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7423376023064344226}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &4011417693567307566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -546,6 +578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
+--- !u!1 &7423376023064344226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5813665575895644556, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
+  m_PrefabInstance: {fileID: 4011417693567307566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4278377483935047188 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 933567306774188346, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
