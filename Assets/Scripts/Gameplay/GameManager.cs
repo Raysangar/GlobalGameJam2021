@@ -94,6 +94,8 @@ public class GameManager : MonoBehaviour
     {
         playingEndGameAnim = true;
         input.enabled = false;
+        SoundManager.Instance.PlayFacemaskFoundSound();
+        SoundManager.Instance.PlayMainMusic();
         StartCoroutine(NextLevelCoroutine());
     }
 
@@ -107,6 +109,7 @@ public class GameManager : MonoBehaviour
     {
         playingEndGameAnim = true;
         input.enabled = false;
+        SoundManager.Instance.PlayGameOverSound();
         OnGameOver();
     }
 

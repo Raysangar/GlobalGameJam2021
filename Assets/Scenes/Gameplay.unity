@@ -2921,6 +2921,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0d19c7a780dd1d7499ab6b0718c7c811, type: 3}
   mainMusic: {fileID: 8300000, guid: d577bde39f367644483a403edb8f3571, type: 3}
   countdownMusic: {fileID: 8300000, guid: 7b2b20789e420184aae3678c712aba56, type: 3}
+  facemaskFoundSound: {fileID: 8300000, guid: 69bbe8760e94bbd42a32965d941c6467, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 1ebfe80cfce15ca4685c9e1f9ecb2f46, type: 3}
 --- !u!1 &1160831237
 GameObject:
   m_ObjectHideFlags: 0

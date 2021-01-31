@@ -33,6 +33,16 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PlayGameOverSound()
+    {
+        PlaySound(gameOverSound);
+    }
+
+    public void PlayFacemaskFoundSound()
+    {
+        PlaySound(facemaskFoundSound);
+    }
+
     public void PlayTransitionSound()
     {
         PlaySound(transitionSounds[Random.Range(0, transitionSounds.Length)]);
@@ -113,6 +123,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip[] transitionSounds;
     [SerializeField] AudioClip mainMusic;
     [SerializeField] AudioClip countdownMusic;
+    [SerializeField] AudioClip facemaskFoundSound;
+    [SerializeField] AudioClip gameOverSound;
 
     private AudioSource musicSource;
     private List<AudioSource> sources;
