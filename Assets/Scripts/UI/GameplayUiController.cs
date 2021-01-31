@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class GameplayUiController : MonoBehaviour
 {
@@ -35,10 +36,13 @@ public class GameplayUiController : MonoBehaviour
 
         levelText.text = gameManager.CurrentLevel == 0 ? "Tutorial" : ("Level " + gameManager.CurrentLevel);
 
-        if (popupParent.activeSelf && UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject != null)
+        if (popupParent.activeSelf)
         {
             var position = selectionImage.position;
-            position.y = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform.position.y;
+            if (EventSystem.current.currentSelectedGameObject != null)
+                position.y = EventSystem.current.currentSelectedGameObject.transform.position.y;
+            else
+                EventSystem.current.SetSelectedGameObject(playAgainButton.gameObject);
             selectionImage.position = position;
         }
     }

@@ -52,11 +52,20 @@ public class SoundManager : MonoBehaviour
     public void PlayGameOverSound()
     {
         PlaySound(gameOverSound);
+        StartCoroutine(LowerVolumeOnMusicCoroutine(gameOverSound.length));
     }
 
     public void PlayFacemaskFoundSound()
     {
         PlaySound(facemaskFoundSound);
+        StartCoroutine(LowerVolumeOnMusicCoroutine(facemaskFoundSound.length));
+    }
+
+    private IEnumerator LowerVolumeOnMusicCoroutine(float duration)
+    {
+        musicSource.volume = 0;
+        yield return new WaitForSeconds(duration);
+        musicSource.volume = 1;
     }
 
     public void PlayTransitionSound()

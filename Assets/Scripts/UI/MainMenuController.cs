@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -81,14 +82,16 @@ public class MainMenuController : MonoBehaviour
     {
         if (SoundManager.Instance != null)
             SoundManager.Instance.PlayMainMenuMusic();
-        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(startGameButton.gameObject);
+        EventSystem.current.SetSelectedGameObject(startGameButton.gameObject);
     }
 
     private void Update()
     {
         var position = selectionImage.position;
-        if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject != null)
-            position.y = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform.position.y;
+        if (EventSystem.current.currentSelectedGameObject != null)
+            position.y = EventSystem.current.currentSelectedGameObject.transform.position.y;
+        else
+            EventSystem.current.SetSelectedGameObject(startGameButton.gameObject);
         selectionImage.position = position;
     }
 
