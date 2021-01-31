@@ -35,7 +35,7 @@ public class GameplayUiController : MonoBehaviour
 
         levelText.text = gameManager.CurrentLevel == 0 ? "Tutorial" : ("Level " + gameManager.CurrentLevel);
 
-        if (popupParent.activeSelf)
+        if (popupParent.activeSelf && UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject != null)
         {
             var position = selectionImage.position;
             position.y = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform.position.y;

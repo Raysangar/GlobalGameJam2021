@@ -11,6 +11,7 @@ public class DifficultySettings : ScriptableObject
         cachedLevelDifficulty.FacemasksSetup.Clear();
 
         int totalWeight = 0;
+        cachedSceneFacemaskWeights.Clear();
         foreach (var weightSetup in levelSetup.FacemaskProbabilityWeightForEachScene)
         {
             cachedSceneFacemaskWeights.Add(weightSetup.weight);
