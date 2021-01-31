@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  maxLeftPosition: 0
+  maxRightPosition: 0
 --- !u!61 &1922605745239753440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -423,6 +425,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5757710025358887994}
     m_Modifications:
+    - target: {fileID: 878583364559861139, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
+      propertyPath: canBeGoodFacemask
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 933567306774188346, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
       propertyPath: m_RootOrder
       value: 2

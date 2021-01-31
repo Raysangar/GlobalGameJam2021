@@ -32,7 +32,7 @@ public class Scene : MonoBehaviour
         for (int iObject = 0; iObject < InteractableObjects.Length; ++iObject)
         {
             bool hasMask = false;
-            if (numberOfFaceMasks > 0)
+            if (numberOfFaceMasks > 0 && InteractableObjects[iObject].CanBeGoodFacemask)
             {
                 hasMask = Random.Range(iObject, InteractableObjects.Length) == iObject;
                 if (hasMask)

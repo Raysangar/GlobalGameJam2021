@@ -188,6 +188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
+  maxLeftPosition: 0
+  maxRightPosition: 0
 --- !u!61 &4204818908152723051
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -325,6 +327,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8093638520866487263}
     m_Modifications:
+    - target: {fileID: 878583364559861139, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
+      propertyPath: canBeGoodFacemask
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 933567306774188346, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -601,11 +607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2123872594591191626, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.016
+      value: 0.107
       objectReference: {fileID: 0}
     - target: {fileID: 2123872594591191626, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.003
+      value: -0.055
       objectReference: {fileID: 0}
     - target: {fileID: 2123872594591191626, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
       propertyPath: m_LocalRotation.w

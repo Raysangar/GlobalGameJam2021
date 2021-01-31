@@ -399,6 +399,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5768816553829920463}
     m_Modifications:
+    - target: {fileID: 878583364559861139, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
+      propertyPath: canBeGoodFacemask
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 933567306774188346, guid: 7fbb5273445130247842a07a9a0a20bc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -497,6 +501,10 @@ PrefabInstance:
       propertyPath: openedSprite
       value: 
       objectReference: {fileID: -3521427111303423466, guid: 163ab218624b05441a43bdef9c20fa16, type: 3}
+    - target: {fileID: 878583364559861139, guid: e2ea283d5eabbbe4f86f9c400f82239f, type: 3}
+      propertyPath: canBeGoodFacemask
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 933567306774188346, guid: e2ea283d5eabbbe4f86f9c400f82239f, type: 3}
       propertyPath: m_RootOrder
       value: 3

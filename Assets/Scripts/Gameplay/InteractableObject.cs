@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
+    public bool CanBeGoodFacemask => canBeGoodFacemask;
+
     public void Initialize(bool hasFacemask)
     {
         this.hasFacemask = hasFacemask;
@@ -38,6 +40,7 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] Sprite closedSprite;
     [SerializeField] Sprite openedSprite;
     [SerializeField] AudioClip openSound;
+    [SerializeField] bool canBeGoodFacemask = true;
 
     [Header("Interaction Feedback")]
     [SerializeField] GameObject keyboardInteraction;
