@@ -18,8 +18,25 @@ MonoBehaviour:
     FacemaskProbabilityWeightForEachScene:
     - id: 6
       weight: 1
-  - FacemasksCount: 5
+  - FacemasksCount: 2
     TimerDurationInSeconds: 120
+    FacemaskProbabilityWeightForEachScene:
+    - id: 0
+      weight: 50
+    - id: 1
+      weight: 50
+    - id: 2
+      weight: 30
+    - id: 4
+      weight: 20
+    - id: 5
+      weight: 0
+    - id: 6
+      weight: 0
+    - id: 3
+      weight: 0
+  - FacemasksCount: 2
+    TimerDurationInSeconds: 100
     FacemaskProbabilityWeightForEachScene:
     - id: 0
       weight: 40
@@ -31,6 +48,125 @@ MonoBehaviour:
       weight: 20
     - id: 5
       weight: 10
+    - id: 6
+      weight: 10
+    - id: 3
+      weight: 10
+  - FacemasksCount: 1
+    TimerDurationInSeconds: 80
+    FacemaskProbabilityWeightForEachScene:
+    - id: 0
+      weight: 30
+    - id: 1
+      weight: 30
+    - id: 2
+      weight: 40
+    - id: 4
+      weight: 40
+    - id: 5
+      weight: 40
+    - id: 6
+      weight: 20
+    - id: 3
+      weight: 20
+  - FacemasksCount: 1
+    TimerDurationInSeconds: 70
+    FacemaskProbabilityWeightForEachScene:
+    - id: 0
+      weight: 20
+    - id: 1
+      weight: 20
+    - id: 2
+      weight: 30
+    - id: 4
+      weight: 30
+    - id: 5
+      weight: 30
+    - id: 6
+      weight: 30
+    - id: 3
+      weight: 30
+  - FacemasksCount: 1
+    TimerDurationInSeconds: 60
+    FacemaskProbabilityWeightForEachScene:
+    - id: 0
+      weight: 10
+    - id: 1
+      weight: 10
+    - id: 2
+      weight: 20
+    - id: 4
+      weight: 20
+    - id: 5
+      weight: 20
+    - id: 6
+      weight: 40
+    - id: 3
+      weight: 40
+  - FacemasksCount: 1
+    TimerDurationInSeconds: 60
+    FacemaskProbabilityWeightForEachScene:
+    - id: 0
+      weight: 5
+    - id: 1
+      weight: 5
+    - id: 2
+      weight: 10
+    - id: 4
+      weight: 10
+    - id: 5
+      weight: 10
+    - id: 6
+      weight: 10
+    - id: 3
+      weight: 10
+  - FacemasksCount: 1
+    TimerDurationInSeconds: 55
+    FacemaskProbabilityWeightForEachScene:
+    - id: 0
+      weight: 0
+    - id: 1
+      weight: 0
+    - id: 2
+      weight: 10
+    - id: 4
+      weight: 10
+    - id: 5
+      weight: 10
+    - id: 6
+      weight: 10
+    - id: 3
+      weight: 10
+  - FacemasksCount: 1
+    TimerDurationInSeconds: 50
+    FacemaskProbabilityWeightForEachScene:
+    - id: 0
+      weight: 0
+    - id: 1
+      weight: 0
+    - id: 2
+      weight: 5
+    - id: 4
+      weight: 5
+    - id: 5
+      weight: 10
+    - id: 6
+      weight: 10
+    - id: 3
+      weight: 10
+  - FacemasksCount: 1
+    TimerDurationInSeconds: 50
+    FacemaskProbabilityWeightForEachScene:
+    - id: 0
+      weight: 0
+    - id: 1
+      weight: 0
+    - id: 2
+      weight: 1
+    - id: 4
+      weight: 1
+    - id: 5
+      weight: 5
     - id: 6
       weight: 10
     - id: 3
