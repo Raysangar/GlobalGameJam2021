@@ -6,7 +6,7 @@ public class ScenesManager : MonoBehaviour
     public System.Action<System.Action> OnPlayerGoesToNewScene;
     public Dictionary<Scene.ID, Scene> Map { get; private set; }
 
-    public void Initialize(PlayerController player, CameraController cameraController)
+    public void Initialize(PlayerController player, CameraController cameraController, UnityEngine.InputSystem.PlayerInput input)
     {
         this.player = player;
         this.cameraController = cameraController;
@@ -15,7 +15,7 @@ public class ScenesManager : MonoBehaviour
         {
             scene.gameObject.SetActive(false);
             Map.Add(scene.Id, scene);
-            scene.Initialize(OnPlayerGoesToNewSceneCallback);
+            scene.Initialize(OnPlayerGoesToNewSceneCallback, input);
         }
     }
 

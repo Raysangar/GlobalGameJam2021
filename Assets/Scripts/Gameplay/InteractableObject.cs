@@ -1,10 +1,18 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.DualShock;
+using UnityEngine.InputSystem.XInput;
 
 public class InteractableObject : MonoBehaviour
 {
     public bool CanBeGoodFacemask => canBeGoodFacemask;
 
-    public void Initialize(bool hasFacemask)
+    public void Initialize(PlayerInput input)
+    {
+        this.input = input;
+    }
+
+    public void SetupForLevel(bool hasFacemask)
     {
         this.hasFacemask = hasFacemask;
         spriteRenderer.sprite = closedSprite;
@@ -28,12 +36,34 @@ public class InteractableObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        keyboardInteraction.SetActive(true);
+        if (input.currentControlScheme == "Gamepad")
+        {
+            int i = 0;
+            Gamepad gamepad;
+            do
+            {
+                gamepad = input.devices[i++] as Gamepad;
+            }
+            while (i < input.devices.Count && gamepad == null);
+            if (gamepad != null)
+            {
+                if (gamepad is DualShockGamepad)
+                    playstationGamepadInteraction.SetActive(true);
+                else
+                    genericGamepadInteraction.SetActive(true);
+            }
+            else
+                keyboardInteraction.SetActive(true);
+        }
+        else
+            keyboardInteraction.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         keyboardInteraction.SetActive(false);
+        playstationGamepadInteraction.SetActive(false);
+        genericGamepadInteraction.SetActive(false);
     }
 
     [SerializeField] SpriteRenderer spriteRenderer;
@@ -49,4 +79,5 @@ public class InteractableObject : MonoBehaviour
 
     private bool hasFacemask;
     private Collider2D nearCollider;
+    private PlayerInput input;
 }

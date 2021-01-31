@@ -11,15 +11,19 @@ public class Scene : MonoBehaviour
     public float LeftBound => maxLeftPosition;
     public float RightBound => maxRightPosition;
 
-    public void Initialize(System.Action<ID> playerGoesToNewSceneCallback)
+    public void Initialize(System.Action<ID> playerGoesToNewSceneCallback, UnityEngine.InputSystem.PlayerInput input)
     {
-        foreach (var transitioner in GetComponentsInChildren<SceneTransitioner>())
-            transitioner.OnPlayerGoesToNewScene += playerGoesToNewSceneCallback;
         InteractableObjects = GetComponentsInChildren<InteractableObject>();
+        foreach (var interactableObject in InteractableObjects)
+            interactableObject.Initialize(input);
+
         this.sceneTransitioners = new Dictionary<ID, SceneTransitioner>();
         var sceneTransitioners = GetComponentsInChildren<SceneTransitioner>();
         foreach (var transitioner in sceneTransitioners)
+        {
+            transitioner.OnPlayerGoesToNewScene += playerGoesToNewSceneCallback;
             this.sceneTransitioners.Add(transitioner.TargetScene, transitioner);
+        }
     }
 
     public Vector3 GetPlayerInitialPositionComingFrom(ID scene)
@@ -38,7 +42,7 @@ public class Scene : MonoBehaviour
                 if (hasMask)
                     --numberOfFaceMasks;
             }
-            InteractableObjects[iObject].Initialize(hasMask);
+            InteractableObjects[iObject].SetupForLevel(hasMask);
         }
     }
 
