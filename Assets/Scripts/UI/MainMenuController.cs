@@ -52,7 +52,7 @@ public class MainMenuController : MonoBehaviour
         time = 0;
         while (time < creditsFadeDuration)
         {
-            mainMenuCanvasGroup.alpha = creditsFadeDuration - time;
+            mainMenuCanvasGroup.alpha = time / creditsFadeDuration;
             time += Time.deltaTime;
             yield return null;
         }

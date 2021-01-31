@@ -1476,7 +1476,7 @@ MonoBehaviour:
   credtisInitialPosition: -100
   credtisTargetPosition: 8500
   creditsTargetPositionForFadeIn: 7500
-  creditsSpeed: 300
+  creditsSpeed: 400
 --- !u!114 &652789457
 MonoBehaviour:
   m_ObjectHideFlags: 0

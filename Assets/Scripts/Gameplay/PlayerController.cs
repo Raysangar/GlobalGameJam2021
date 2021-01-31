@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public System.Action OnFacemaskFound;
 
+    public Collider2D Collider { get; private set; }
+
     public void Reset(bool playIntro)
     {
         animator.SetBool(FacemaskAnimHash, false);
@@ -57,6 +59,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         nearInteractableObjects = new List<InteractableObject>();
+        Collider = GetComponent<Collider2D>();
     }
 
     private void Update()
@@ -84,7 +87,6 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private List<InteractableObject> nearInteractableObjects;
-
     private readonly int FacemaskAnimHash = Animator.StringToHash("facemask");
     private readonly int HappyAnimHash = Animator.StringToHash("happy");
     private readonly int VerticalAnimHash = Animator.StringToHash("vertical");

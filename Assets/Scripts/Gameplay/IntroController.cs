@@ -35,7 +35,7 @@ public class IntroController : MonoBehaviour
     private IEnumerator IntroCoroutine(System.Action introFinishedCallback)
     {
         player.Move(Vector2.right);
-        SoundManager.Instance.PlaySound(backgroundSounds);
+        SoundManager.Instance.PlaySound(backgroundSounds, .7f);
         yield return new WaitUntil(() => Vector2.Distance(player.transform.position, playerFinalPosition.position) < .02f);
         player.Move(Vector2.zero);
         player.GetUngry();

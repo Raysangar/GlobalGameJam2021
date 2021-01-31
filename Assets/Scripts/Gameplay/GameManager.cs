@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
                 SecondsLeft = 0;
                 GameOver();
             }
-            else if (SecondsLeft <= 30)
+            else if (SecondsLeft <= 20)
             {
                 SoundManager.Instance.PlayCountdownMusic();
             }

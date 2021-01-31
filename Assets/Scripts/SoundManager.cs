@@ -6,9 +6,10 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySound(AudioClip clip, float volume = 1)
     {
         var source = GetAvailableSource();
+        source.volume = volume;
         source.clip = clip;
         source.Play();
     }

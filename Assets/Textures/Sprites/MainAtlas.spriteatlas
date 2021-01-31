@@ -45,7 +45,7 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: f726c4f040162db4ab7522bd5553b06f, type: 3}
     - {fileID: 102900000, guid: 4061595b51b458f4b95a5475b0f6c76f, type: 3}
-    totalSpriteSurfaceArea: 2538366
+    totalSpriteSurfaceArea: 3411326
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -53,12 +53,14 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 8fe336108008dd2439fa6ab0f734040c, type: 3}
   - {fileID: 21300000, guid: 205b3450b7e02884c971845a0602a6db, type: 3}
+  - {fileID: 21300000, guid: 5614df50ad3cf4343800e992e4f5b583, type: 3}
   - {fileID: 21300000, guid: e89fcf315f8817b4a90f84eae20d1c9e, type: 3}
   - {fileID: 3840749433329779590, guid: 4df11c51702fac245853c436969b8727, type: 3}
   - {fileID: -4660772958183512353, guid: 2e360a225b6007e4fb921c45ee8a98bb, type: 3}
   - {fileID: 21300000, guid: 27b8fad222883b440a011e9185821e2a, type: 3}
   - {fileID: 21300000, guid: 8f917013700a32b4fbbe283f786cbff7, type: 3}
   - {fileID: 4915440983496847725, guid: f6ff4c336835c3847b969a9cc25b1de6, type: 3}
+  - {fileID: 21300000, guid: faaf5e733317e564b92625a5bedf1d53, type: 3}
   - {fileID: 21300000, guid: 4bf078548138d074e857544bd2696b15, type: 3}
   - {fileID: 21300000, guid: ebb534e50c52b7041bcab5f4529923e1, type: 3}
   - {fileID: 21300000, guid: 1e970c06c5e410f4f8c210af6778979d, type: 3}
@@ -70,6 +72,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: f251fd47a4d481e40882fc72c0d830cd, type: 3}
   - {fileID: 21300000, guid: 635b1367cf2343f4ebc7a97d0926ccce, type: 3}
   - {fileID: 21300000, guid: c99a72b7710ce65428845f917a1f9c1a, type: 3}
+  - {fileID: 21300000, guid: 4e9e73d73f114374faaa794a59b9c139, type: 3}
+  - {fileID: 21300000, guid: d618e6f71dbe6344eb722496b66bec90, type: 3}
   - {fileID: -3521427111303423466, guid: 163ab218624b05441a43bdef9c20fa16, type: 3}
   - {fileID: 21300000, guid: aca0dd582848e164997acd0653a9514c, type: 3}
   - {fileID: 21300000, guid: a0817078f1a6158428260dca18b3df5a, type: 3}
@@ -80,6 +84,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: a4a4eea955c169f448b53c172f7948a3, type: 3}
   - {fileID: 21300000, guid: 6dde209a68bbb4f448160fff151ffce7, type: 3}
   - {fileID: 21300000, guid: d031acbabf328fb46af2da83bf4eaba3, type: 3}
+  - {fileID: 21300000, guid: c0aec3ca8537f9741a465f82d5001c59, type: 3}
   - {fileID: -6858186359995482414, guid: 6585f44b97f26c344a4475b04b6444ad, type: 3}
   - {fileID: 21300000, guid: 8f2469bb539002b4aa0f49db30da8395, type: 3}
   - {fileID: 21300000, guid: eb23e2cb91fc15f49aa6408d618c1cc2, type: 3}
@@ -94,12 +99,14 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - Letra_creditos
   - Keyboard
+  - _DSF9942
   - Esc_habitacion_base
   - CajonAbierto_0
   - mesita_abierta
   - FondoDialogo_dimensionesgrandes
   - "ba\xF1otapacerrada"
   - armario_abierto
+  - _DSF9952
   - Logo
   - Letra_playagain
   - Fondo
@@ -111,6 +118,8 @@ SpriteAtlas:
   - LateralWalkHappy
   - Facemask1
   - Esc_cocina
+  - _DSF9956
+  - _DSF9938
   - tapa
   - Car close
   - LivingRoom
@@ -121,6 +130,7 @@ SpriteAtlas:
   - PlaystationGamepad
   - Back
   - temato
+  - _DSF9935
   - cajon
   - Pasillo
   - Letra_mainmenu
