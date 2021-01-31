@@ -952,10 +952,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 972449770}
+    m_SelectOnDown: {fileID: 972449770}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -2082,8 +2082,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 471486901}
+    m_SelectOnDown: {fileID: 471486901}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -2920,6 +2920,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b59e9daac2d3e754da7598e7ef2f9862, type: 3}
   - {fileID: 8300000, guid: 0d19c7a780dd1d7499ab6b0718c7c811, type: 3}
   mainMusic: {fileID: 8300000, guid: d577bde39f367644483a403edb8f3571, type: 3}
+  countdownMusic: {fileID: 8300000, guid: 7b2b20789e420184aae3678c712aba56, type: 3}
 --- !u!1 &1160831237
 GameObject:
   m_ObjectHideFlags: 0

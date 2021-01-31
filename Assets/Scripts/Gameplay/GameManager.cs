@@ -25,16 +25,20 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(bool playIntro)
     {
-        CurrentLevel = 0;
         if (playIntro)
+        {
+            CurrentLevel = 0;
             introController.StartIntro(SetupLevel);
+        }
         else
+        {
+            CurrentLevel = 1;
             SetupLevel();
+        }
     }
 
     public void StartNextLevel()
     {
-        playingEndGameAnim = false;
         ++CurrentLevel;
         SetupLevel();
     }
@@ -58,6 +62,10 @@ public class GameManager : MonoBehaviour
                 SecondsLeft = 0;
                 GameOver();
             }
+            else if (SecondsLeft <= 30)
+            {
+                SoundManager.Instance.PlayCountdownMusic();
+            }
         }
     }
 
@@ -78,6 +86,7 @@ public class GameManager : MonoBehaviour
         player.Reset(false);
         introController.HideIntro();
         SoundManager.Instance.PlayTransitionSound();
+        playingEndGameAnim = false;
         OnGameStarted();
     }
 

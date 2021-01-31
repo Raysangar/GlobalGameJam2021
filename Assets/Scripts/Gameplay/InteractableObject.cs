@@ -4,6 +4,8 @@ using UnityEngine.InputSystem.DualShock;
 
 public class InteractableObject : MonoBehaviour
 {
+    public bool HasFacemask { get; private set; }
+
     public bool CanBeGoodFacemask(int currentLevel)
     {
         return canBeGoodFacemask && (currentLevel > 0 || shouldAppearOnFirstLevel);
@@ -17,7 +19,7 @@ public class InteractableObject : MonoBehaviour
 
     public void SetupForLevel(bool hasFacemask, bool isTutorial)
     {
-        this.hasFacemask = hasFacemask;
+        HasFacemask = hasFacemask;
         this.isTutorial = isTutorial;
         gameObject.SetActive(!isTutorial || shouldAppearOnFirstLevel);
         spriteRenderer.sprite = closedSprite;
@@ -32,9 +34,9 @@ public class InteractableObject : MonoBehaviour
         nearCollider.enabled = false;
         spriteRenderer.sprite = openedSprite;
         SoundManager.Instance.PlayGrabObjectSound(openSound);
-        if (!hasFacemask)
+        if (!HasFacemask)
             DialogController.Instance.ShowWrongFacemaskDialog(isTutorial ? firstLevelCustomWrongDialog : customWrongDialog);
-        return hasFacemask;
+        return HasFacemask;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -82,8 +84,6 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] GameObject keyboardInteraction;
     [SerializeField] GameObject playstationGamepadInteraction;
     [SerializeField] GameObject genericGamepadInteraction;
-
-    private bool hasFacemask;
     private bool isTutorial;
     private Collider2D nearCollider;
     private PlayerInput input;

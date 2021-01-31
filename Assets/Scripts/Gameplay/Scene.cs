@@ -44,6 +44,16 @@ public class Scene : MonoBehaviour
             }
             InteractableObjects[iObject].SetupForLevel(hasMask, level == 0);
         }
+
+        int i = 0;
+        while (i < InteractableObjects.Length && numberOfFaceMasks > 0)
+        {
+            if (InteractableObjects[i].CanBeGoodFacemask(level))
+            {
+                InteractableObjects[i].SetupForLevel(true, level == 0);
+                --numberOfFaceMasks;
+            }
+        }
     }
 
     [SerializeField] ID id;

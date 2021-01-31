@@ -36,7 +36,7 @@ public class IntroController : MonoBehaviour
     {
         player.Move(Vector2.right);
         SoundManager.Instance.PlaySound(backgroundSounds);
-        yield return new WaitUntil(() => Vector2.Distance(player.transform.position, playerFinalPosition.position) < .01f);
+        yield return new WaitUntil(() => Vector2.Distance(player.transform.position, playerFinalPosition.position) < .02f);
         player.Move(Vector2.zero);
         player.GetUngry();
         introAnimator.SetBool(IntroTrigger, false);

@@ -13,6 +13,26 @@ public class SoundManager : MonoBehaviour
         source.Play();
     }
 
+    public void PlayCountdownMusic()
+    {
+        if (musicSource.clip != countdownMusic)
+        {
+            musicSource.Stop();
+            musicSource.clip = countdownMusic;
+            musicSource.Play();
+        }
+    }
+
+    public void PlayMainMusic()
+    {
+        if (musicSource.clip != mainMusic)
+        {
+            musicSource.Stop();
+            musicSource.clip = mainMusic;
+            musicSource.Play();
+        }
+    }
+
     public void PlayTransitionSound()
     {
         PlaySound(transitionSounds[Random.Range(0, transitionSounds.Length)]);
@@ -92,6 +112,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip grabObjectSound;
     [SerializeField] AudioClip[] transitionSounds;
     [SerializeField] AudioClip mainMusic;
+    [SerializeField] AudioClip countdownMusic;
 
     private AudioSource musicSource;
     private List<AudioSource> sources;
