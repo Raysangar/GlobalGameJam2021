@@ -47,8 +47,7 @@ public class DialogController : MonoBehaviour
 
     private void OnPlayerFoundFacemask()
     {
-        dialogParent.alpha = 1;
-        dialog.text = "FINALLY! I FOUND IT!";
+        ShowDialog("Congratulations! You have arrived to Mercasion on time! Will you be able in the next level ?");
     }
 
 
